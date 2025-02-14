@@ -1,4 +1,4 @@
-const BASE_URL = "https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io";
+const BASE_URL = "http://localhost:8080";
 export const fetchCouponsAPI = async () => {
     const response = await fetch(BASE_URL + '/api/coupon');
     return await response.json();

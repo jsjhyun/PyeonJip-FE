@@ -18,7 +18,7 @@ const useWebSocket = (chatRoomId, onMessageReceived, onMessageUpdated, onMessage
     }
 
     const stompClient = new Client({
-      webSocketFactory: () => new SockJS('https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io/ws'),
+      webSocketFactory: () => new SockJS('http://localhost:8080/ws'),
       connectHeaders: {
         Authorization: `Bearer ${token}`,
         chatRoomId: chatRoomId
