@@ -20,7 +20,7 @@ function SandboxApp() {
     const [hasMore, setHasMore] = useState(true);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const BASE_URL = "https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io";
+    const BASE_URL = "http://localhost:8080";
 
 
     const { isLoggedIn, email} = useAuth();

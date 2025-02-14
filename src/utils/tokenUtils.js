@@ -58,7 +58,7 @@ const isAccessTokenValid = (token) => {
 // 토큰 재발급
 const reissueToken = async () => {
     try {
-        const response = await fetch('https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io/api/auth/reissue', {
+        const response = await fetch('http://localhost:8080/api/auth/reissue', {
             method: 'POST',
             credentials: 'include' // 쿠키와 함께 요청
         });

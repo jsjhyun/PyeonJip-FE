@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../../utils/axiosInstance';
-import {toast} from "react-toastify"; // Axios 인스턴스 가져오기
+import { toast } from "react-toastify"; // Axios 인스턴스 가져오기
 
 function ProductList({ products, setProducts }) {
     const [categories, setCategories] = useState([]); // 카테고리 상태 추가
     const navigate = useNavigate();
-    const BASE_URL = "https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io";
+    const BASE_URL = "http://localhost:8080";
     const token = localStorage.getItem('access'); // 저장된 JWT 토큰 가져오기
 
     // 카테고리 목록을 가져오는 함수
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch(BASE_URL+'/api/admin/category', {
+                const response = await fetch(BASE_URL + '/api/admin/category', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function ProductList({ products, setProducts }) {
         if (window.confirm('정말로 이 상품을 삭제하시겠습니까?')) {
             try {
                 // 상품 삭제 요청
-                const deleteResponse = await fetch(BASE_URL+`/api/admin/products/${productId}`, {
+                const deleteResponse = await fetch(BASE_URL + `/api/admin/products/${productId}`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -60,7 +60,7 @@ function ProductList({ products, setProducts }) {
                 });
 
                 // 삭제 후 전체 상품 목록 다시 가져오기
-                const productsResponse = await fetch(BASE_URL+'/api/products/all', {
+                const productsResponse = await fetch(BASE_URL + '/api/products/all', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -98,35 +98,35 @@ function ProductList({ products, setProducts }) {
                 <div>
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th>이름</th>
-                            <th>설명</th>
-                            <th>카테고리 이름</th>
-                            <th>작업</th>
-                        </tr>
+                            <tr>
+                                <th>이름</th>
+                                <th>설명</th>
+                                <th>카테고리 이름</th>
+                                <th>작업</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {products.map(product => (
-                            <tr key={product.id}>
-                                <td>{product.name || 'N/A'}</td>
-                                <td>{product.description || '설명 없음'}</td>
-                                <td>{getCategoryNameById(product.categoryId)}</td>
-                                <td>
-                                    <button
-                                        className="btn-dark-gray me-2"
-                                        onClick={() => navigate(`/admin/edit-product/${product.id}`)}
-                                    >
-                                        수정
-                                    </button>
-                                    <button
-                                        className="btn-dark-gray"
-                                        onClick={() => handleDelete(product.id)}
-                                    >
-                                        삭제
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
+                            {products.map(product => (
+                                <tr key={product.id}>
+                                    <td>{product.name || 'N/A'}</td>
+                                    <td>{product.description || '설명 없음'}</td>
+                                    <td>{getCategoryNameById(product.categoryId)}</td>
+                                    <td>
+                                        <button
+                                            className="btn-dark-gray me-2"
+                                            onClick={() => navigate(`/admin/edit-product/${product.id}`)}
+                                        >
+                                            수정
+                                        </button>
+                                        <button
+                                            className="btn-dark-gray"
+                                            onClick={() => handleDelete(product.id)}
+                                        >
+                                            삭제
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
 

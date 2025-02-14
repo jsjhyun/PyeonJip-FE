@@ -14,6 +14,7 @@ function ProductOptionAdmin() {
     const [selectedImages, setSelectedImages] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [newImageUrl, setNewImageUrl] = useState(''); 
     const token = localStorage.getItem('access'); // 저장된 JWT 토큰 가져오기
 
     const [product, setProduct] = useState({
@@ -21,7 +22,7 @@ function ProductOptionAdmin() {
         description: '',
         category: ''
     });
-    const BASE_URL = "https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io";
+    const BASE_URL = "http://localhost:8080";
 
     useEffect(() => {
         const fetchProductDetails = async () => {

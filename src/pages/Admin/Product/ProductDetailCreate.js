@@ -12,7 +12,7 @@ function ProductDetailCreate() {
         quantity: 0,
         mainImage: ''
     });
-    const BASE_URL = "https://dsrkzpzrzxqkarjw.tunnel-pt.elice.io";
+    const BASE_URL = "http://localhost:8080";
 
     // 입력값 변경 핸들러
     const handleChange = (e) => {
