@@ -1,5 +1,5 @@
 import { jwtDecode } from 'jwt-decode';
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "http://54.180.86.232:8080";
 
 // 토큰 유효성 검사
 const isTokenValid = (token) => {

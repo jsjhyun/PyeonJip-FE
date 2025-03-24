@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "http://54.180.86.232:8080";
 export const fetchCouponsAPI = async () => {
     const response = await fetch(BASE_URL + '/api/coupon');
     return await response.json();

@@ -13,7 +13,7 @@ function ProductOptionEdit() {
         quantity: 0,
         mainImage: ''
     });
-    const BASE_URL = "http://localhost:8080";
+    const BASE_URL = "http://54.180.86.232:8080";
     const token = localStorage.getItem('access'); // 저장된 JWT 토큰 가져오기
 
     // 옵션 정보 불러오기
