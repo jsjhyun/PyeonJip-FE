@@ -21,7 +21,7 @@ function ProductDetail() {
     const [comments, setComments] = useState([]);
     const { isLoggedIn, email} = useAuth();
     const {loadCartData} = useCart();
-    const BASE_URL = "http://54.180.86.232:8080";
+    const BASE_URL = "https://pyeonjip-mall.com";
 
     const [product, setProduct] = useState({
         productImages: [],

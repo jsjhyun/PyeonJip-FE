@@ -32,7 +32,7 @@ function CartApp() {
 
     const { isLoggedIn, email, setIsLoggedIn } = useAuth();
     const { items, setItems, loadCartData } = useCart();
-    const BASE_URL = "http://54.180.86.232:8080";
+    const BASE_URL = "https://pyeonjip-mall.com";
 
     // 쿠폰 데이터 로드
     useEffect(() => {

@@ -18,7 +18,7 @@ const useWebSocket = (chatRoomId, onMessageReceived, onMessageUpdated, onMessage
     }
 
     const stompClient = new Client({
-      webSocketFactory: () => new SockJS('http://54.180.86.232:8080/ws'),
+      webSocketFactory: () => new SockJS('https://pyeonjip-mall.com/ws'),
       connectHeaders: {
         Authorization: `Bearer ${token}`,
         chatRoomId: chatRoomId

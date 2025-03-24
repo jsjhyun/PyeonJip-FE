@@ -20,7 +20,7 @@ function MyPage() {
         try {
             const token = localStorage.getItem('access');
 
-            const response = await fetch(`http://54.180.86.232:8080/api/user/mypage?email=${email}`, {
+            const response = await fetch(`https://pyeonjip-mall.com/api/user/mypage?email=${email}`, {
                 method: 'GET',
                 headers: {
                     'Authorization' : `Bearer ${token}`,
@@ -50,7 +50,7 @@ function MyPage() {
     const fetchPurchaseHistory = async (email) => {
         try {
             setPurchaseHistory([]);
-            const response = await fetch(`http://54.180.86.232:8080/api/orders?email=${email}`);
+            const response = await fetch(`https://pyeonjip-mall.com/api/orders?email=${email}`);
             if (!response.ok) {
                 throw new Error('구매 내역을 불러오는 데 실패했습니다.');
             }
@@ -98,7 +98,7 @@ function MyPage() {
     const handleConfirmCancel = async (orderId) => {
         try {
             toast.dismiss();
-            const response = await fetch(`http://54.180.86.232:8080/api/orders/${orderId}`, { method: 'PATCH' });
+            const response = await fetch(`https://pyeonjip-mall.com/api/orders/${orderId}`, { method: 'PATCH' });
             if (!response.ok) {
                 throw new Error('이미 배송이 진행되었습니다.');
             }
@@ -122,7 +122,7 @@ function MyPage() {
     // 나의 등급을 가져오는 함수
     const fetchUserGrade = async (email) => {
         try {
-            const response = await fetch(`http://54.180.86.232:8080/api/user/${email}`);
+            const response = await fetch(`https://pyeonjip-mall.com/api/user/${email}`);
             if (!response.ok) {
                 throw new Error('등급 정보를 불러오는 데 실패했습니다.');
             }
@@ -165,11 +165,11 @@ function MyPage() {
         switch (field) {
             case 'address':
                 updatedValue = user.address;
-                endpoint = `http://54.180.86.232:8080/api/user/address/${email}`;
+                endpoint = `https://pyeonjip-mall.com/api/user/address/${email}`;
                 break;
             case 'password':
                 updatedValue = prompt('새 비밀번호를 입력해주세요:');
-                endpoint = `http://54.180.86.232:8080/api/user/password/${email}`;
+                endpoint = `https://pyeonjip-mall.com/api/user/password/${email}`;
                 break;
             default:
                 return;

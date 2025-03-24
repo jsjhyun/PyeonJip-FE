@@ -1,5 +1,5 @@
 import {getUserEmail} from "./authUtils";
-const BASE_URL = "http://54.180.86.232:8080";
+const BASE_URL = "https://pyeonjip-mall.com";
 
 export const addServerCart = (cart, email) => {
 // 로그인 상태: 서버로 장바구니 항목 추가
