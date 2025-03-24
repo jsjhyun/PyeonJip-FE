@@ -3,7 +3,7 @@ import { fetchCartDetails } from '../utils/cartUtils';
 import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "http://54.180.86.232:8080";
 
 export const useCart = () => useContext(CartContext);
 
