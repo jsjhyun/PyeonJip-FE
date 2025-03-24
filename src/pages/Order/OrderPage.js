@@ -46,7 +46,7 @@ function OrderPage() {
       }
 
       try {
-        const response = await fetch(`http://54.180.86.232:8080/api/user/${userEmail}`);
+        const response = await fetch(`https://pyeonjip-mall.com/api/user/${userEmail}`);
         if (!response.ok) {
           throw new Error(`HTTP 에러 발생, 현재 상태: ${response.status}`);
         }
@@ -126,7 +126,7 @@ function OrderPage() {
         userEmail: userEmail,
       };
 
-      const response = await fetch(`http://54.180.86.232:8080/api/orders?email=${userEmail}`, {
+      const response = await fetch(`https://pyeonjip-mall.com/api/orders?email=${userEmail}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,14 +139,14 @@ function OrderPage() {
         console.log('주문이 성공적으로 완료되었습니다.');
 
         // 장바구니 비우기 API 호출
-        await fetch(`http://54.180.86.232:8080/api/cart?email=${userEmail}`, {
+        await fetch(`https://pyeonjip-mall.com/api/cart?email=${userEmail}`, {
           method: 'DELETE',
         });
         console.log('장바구니가 성공적으로 비워졌습니다.');
 
         // 쿠폰 비활성화 API 호출
         if (couponId) {
-          await fetch(`http://54.180.86.232:8080/api/coupon/use/${couponId}`, {
+          await fetch(`https://pyeonjip-mall.com/api/coupon/use/${couponId}`, {
             method: 'POST',
           });
           console.log('쿠폰이 성공적으로 비활성화되었습니다.');

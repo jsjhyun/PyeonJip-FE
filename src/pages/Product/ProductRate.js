@@ -9,7 +9,7 @@ function ProductRate({ productId }) {
         const queryParams = new URLSearchParams(location.search);
         const idFromQuery = queryParams.get('productId');
         const idToFetch = productId || idFromQuery;
-        const BASE_URL = "http://54.180.86.232:8080";
+        const BASE_URL = "https://pyeonjip-mall.com";
 
         if (idToFetch) {
             fetch(BASE_URL + `/api/comments/product-rating/${idToFetch}`)

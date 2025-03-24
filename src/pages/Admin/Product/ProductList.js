@@ -6,7 +6,7 @@ import { toast } from "react-toastify"; // Axios 인스턴스 가져오기
 function ProductList({ products, setProducts }) {
     const [categories, setCategories] = useState([]); // 카테고리 상태 추가
     const navigate = useNavigate();
-    const BASE_URL = "http://54.180.86.232:8080";
+    const BASE_URL = "https://pyeonjip-mall.com";
     const token = localStorage.getItem('access'); // 저장된 JWT 토큰 가져오기
 
     // 카테고리 목록을 가져오는 함수

@@ -4,7 +4,7 @@ module.exports = function (app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://54.180.86.232:8080',
+            target: 'https://pyeonjip-mall.com',
             changeOrigin: true,
         })
     );

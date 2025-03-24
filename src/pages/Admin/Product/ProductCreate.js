@@ -12,7 +12,7 @@ function CreateProduct() {
     const [options, setOptions] = useState([{ name: '', price: '', quantity: '', imageUrl: '' }]);
     const [productImages, setProductImages] = useState([{ imageUrl: '' }]); // 상품 이미지 관리
     const navigate = useNavigate();
-    const BASE_URL = "http://54.180.86.232:8080";
+    const BASE_URL = "https://pyeonjip-mall.com";
     const token = localStorage.getItem('access'); // 저장된 JWT 토큰 가져오기
 
     // 옵션 필드의 값 변경을 처리하는 함수
